@@ -1,5 +1,3 @@
-This is my first git trial HW
-second commit trial
-hi
-
-This is an addition to my file
+ #Question 1
+# Complete definitions for key Git & GitHub terminology
+#GIT WORKFLOW FUNDAMENTALS
