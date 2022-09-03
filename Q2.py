@@ -29,4 +29,18 @@ if uinput != pin:
 start_balance = 100
 withdraw = int(input('Enter withdrawal amount: £'))
 current_balance = start_balance - withdraw
-print('Your balance is now: £{}'.format(current_balance))
+
+try:
+    assert current_balance > 0
+except AssertionError:
+    print("You do not have enough funds to withdraw this amount. Your current balance is £{}.".format(start_balance))
+
+else:
+    print('Your balance is now: £{}'.format(current_balance))
+
+# Using if and else
+# if withdraw >= start_balance:
+#     print("You do not have enough funds to withdraw this amount. Your current balance is £{}.".format(start_balance))
+# else:
+#     current_balance = start_balance - withdraw
+#     print('Your balance is now: £{}'.format(current_balance))
