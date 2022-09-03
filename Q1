@@ -1,0 +1,38 @@
+ Question 1
+
+
+GIT WORKFLOW FUNDAMENTALS
+·        Working Directory
+Working directory is the local files that are being currently worked on. The files have been taken out of the Git directory
+database and are ready to worked on and used.
+·        Staging Area
+ Staging Area is also on the local machine (usually in the Git directory), the files are being prepared to go to the repository. Files are moved from
+ working directory to the staging area.
+ ·        Local Repo (head)
+ The file from the staging area has been moved to the local repository (Git directory). The file has been committed as a snapshot permanently in the git respository.
+ ·        Remote repo (master)
+The remote repository is on a remote machine. It is where the files are stored remotely. Files are pushed from local to remote and
+ pulled from remote to local.
+
+WORKING DIRECTORY STATES:
+
+·        Staged
+This means that a modified file has been selected to be committed.
+·        Modified
+This means that the file has been changed but it has not been added to the database yet.
+·        Committed
+This means the file has been stored on the local database.
+
+GIT COMMANDS:
+·        Git add
+Add a file to be committed
+·        Git commit
+Commit the file as a snapshot on the local repository
+·        Git push
+send local commits to the remote repository
+·        Git fetch
+Fetch all the branches from the remote Git
+·        Git merge
+Merge branch into another (usually to the main branch)
+·        Git pull
+get files from the remote repository
