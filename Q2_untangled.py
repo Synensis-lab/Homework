@@ -1,3 +1,6 @@
+# This file is the Q2.py re-written in an effort (unsuccessfully)
+# to be able to perform unit tests.
+
 pin = '1234'
 start_balance = 100
 
@@ -15,7 +18,7 @@ def compare_pin():
 
 def pin_correct():
     print('Correct pin')
-    calculate_balance()
+    withdrawal_request()
 
 
 def pin_not_correct():
@@ -25,7 +28,7 @@ def pin_not_correct():
     if usinput2 == pin:
         pin_correct()
     else:
-        usinput2 != pin
+        # usinput2 != pin
         pin_not_correct_2()
 
 
@@ -36,39 +39,33 @@ def pin_not_correct_2():
     if usinput3 == pin:
         pin_correct()
     else:
-        usinput3 != pin
+        # usinput3 != pin
         print('You have entered the pin incorrectly 3 times')
 
 
-def calculate_balance():
+def withdrawal_request():
     global withdraw_amt
-    withdraw_amt = input('Enter withdrawal amount: £')
+    withdraw_amt = input('Enter amount you would like to withdraw: £')
     display_balance()
 
 
 def display_balance():
     current_balance = start_balance - int(withdraw_amt)
     if current_balance > 0:
-        print('Your balance is now: £{}'.format(current_balance))
+        print('Withdrawal successful: Your balance is now: £{}'.format(current_balance))
     else:
         withdrawal_negative_error()
 
 
 def withdrawal_negative_error():
     print("You do not have enough funds to withdraw this amount. Your current balance is £{}.".format(start_balance))
-#
-#
+
 
 # The bit where the functions run
 
 
 get_pin()
-# compare_pin()
 
-# if usinput1 == pin:
-#     pin_correct()
-# if usinput1 != pin:
-#     pin_not_correct()
 
 
 
