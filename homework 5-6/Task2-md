@@ -1,0 +1,107 @@
+TASK 2 (SQL)
+
+Question 1
+Design a cinema booking system.
+Think how you would approach the problem and what are potential ways of solving it?
+
+
+You do not need to write actual code, but describe the high-level approach:
+·        Draw a list of key requirements
+·        What are your main considerations?
+·        What would be your common or biggest problems?
+·        What components or tools would you potentially use?
+·        You are welcome to draw a diagram (a very simple one) for the process flow to explain how  it is going to work. 
+
+
+Key Requirements:
+- user interface 
+- search feature -search by title, genre, language etc.
+- details of cinemas - where, how to get there etc
+- seat choice - visual diagram of available seats
+- cancellation
+- notifications - new film showing, health and safety announcements (eg covid etc)
+- log in for customer
+- database for storing data
+- takes payment for booking (check with owner to see how this is to implemented)
+- discounts or loyalty etc?
+- backend to connect database and user
+- security of data 
+- storage of data
+- secure payment system
+- generates ticket
+- access to help for customer
+
+
+Main Considerations:
+cost
+security - payments, customer data etc
+easy to use for customer
+speed of use for customer
+volume of bookings
+
+
+
+common problems:
+double booking
+bugs and errors in program
+Back up - when, how much?
+traffic - how many people using interface at a time
+disability access
+last minute changes in booking
+double booking - over booking
+No-shows
+Bad user interface - difficult to use
+Booking process takes too long
+Cost unclear for user
+compatibility with different devices, operating systems.
+maintenance - keeping system running, updating etc
+errors and bugs - booking system crashing
+Data storage issues, loosing data etc
+Security - keeping data safe
+problems with payment
+problems with 
+
+
+Tools:
+visual project management tool for example scrum board(kanban board)
+Visual requirements document for tables in SQL
+Blueprint for system
+job scheduling software ofr team
+User interface design system - eg wireframe
+SQL or another database
+Testing tools
+Design patterns
+
+
+Simple Process flow:
+
+customer searches on front page (possibly by film, cinema, local cinema, genre etc)
+
+computer generates response
+
+customer specifies when/where  they want to see film
+
+seat available?
+
+no - offer another search or other options
+
+Yes - customer login or create new acc.
+
+customer details found or completed
+
+available seats shown on diagram
+
+customer selects seats
+
+payment taken
+
+coupon/discount/loyalty options
+
+payment confirmed
+
+ticket generated and dispensed
+
+ticket verified at cinema when customer comes to view film
+
+option for support/help if something goes wrong at every step of process.
+

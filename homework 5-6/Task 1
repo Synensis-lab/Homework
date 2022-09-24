@@ -48,3 +48,106 @@ Ideally the team is self organising.
 
 
 Question 2.
+You are leading a development team that was given a task to create a new yoga booking system.
+
+High level description of the system is as follows:
+
+·        It has a very simple interface to accept user input (bookings) and display classes information
+·        All bookings, appointments, schedules etc should be stored in a SQL database.
+·        There is a ‘backend’ system that should be written in Python to handle the logic and manage the data flow.
+Your team has two weeks to build a simple prototype that will be shown to the client to seek their feedback and discuss further enhancements.
+
+TASK
+·        Break this task into smaller stories (chunks of work) for the team to work on.
+·        Assume that one person works on one task.
+·        Mark tasks that can be worked on in parallel and perhaps those that need to be worked on in particular order.
+
+
+Stage 1 -
+Planning phase - Business side of things
+How long is the project?
+What resources are needed?
+How many people allocated?
+Cost?
+Collaboration - eg other teams?
+
+Then come up with a system process flow.
+
+Phase 2  - SDLC Requirements - further discussions needed with client
+KEY REQUIREMENTS
+
+needs a suitable user interface (needs clarification as to who is using this interface)
+needs an SQL data base creating to store bookings, appointments
+needs backend python system for logic and data flow
+
+!!!clarification needed from client!!!
+- scale? (how big, how many bookings, how often are bookings made
+- maintenance who will look after the system - update yoga schedules, changes etc, will they need training?
+- who is making the bookings ie the yoga teacher/centre or the yoga customer?
+- payment, is payment being taken at point of booking or subscription or at class etc
+- what is currently used? Why do they want a new system (ask to identify current issues so they can be addressed in new system.)
+- data what data do they want stored, how is this data used? Do they want this data analysed perhaps for advertising etc.
+- does the user need to create an account to use - if so when? before, during or after booking?
+- when are customers able to book? (a week in advance, month?)
+- support for customer? help if something goes wrong
+
+COMMON PROBLEMS
+traffic - how many people using interface at a time
+disability access
+last minute changes in booking
+double booking - over booking
+No-shows
+Bad user interface - difficult to use
+Booking process takes too long
+Cost unclear for user
+compatibility with different devices, operating systems.
+maintenance - keeping system running, updating etc
+errors and bugs - booking system crashing
+Data storage issues, loosing data etc
+Security - keeping data safe
+Back up - when, how much?
+
+TOOLS
+visual project management tool for example scrum board(kanban board)
+Visual requirements document for tables in SQL
+Blueprint for system
+job scheduling software
+
+User interface design system - eg wireframe
+SQL database
+Testing tools
+Design patterns
+
+
+
+STAGE 3 - DESIGN phase - how we are going to approach this - EVERYBODY in team 1/2 DAY
+Use requirements to break problem into tasks.
+Chunking up the task - total time = 2 weeks (10 working days)
+NEEDED OUTCOME - prototype shown to client day 10.
+Using Agile values and SCRUM as methodology.
+
+
+STAGE 4 -IMPLEMENT phase - DAYS 2/3-7 - writing and developing the software (in this case a sprint)
+possible delegation of tasks - but dependent on last group design stage outcome.
+Ideally team organises itself and tasks are allocated daily - so everybody is working in parallel and is occupied
+person 1 - user interface design
+person 2 - SQL queries
+person 3- SQL data
+person 4 - back end python (connecting SQL and python)
+person 5 - security and testing - ongoing testing throughout the process,  planning tests for testing phase, automated tests?
+person 6- checking different parts of system are secure,
+person 7 - scrum master - hosting daily meetings, overseeing whole process
+
+
+STAGE 5 - TEST and INTEGRATE phase- DAY 8-9 - Everybody -  testing and debugging and amending - this stage may or may not be relevant but will def be needed on final sprint
+integration and unit tests.
+Performance tests
+Security testing
+User acceptance testing
+
+STAGE 6 - DEPLOY prototype to client - DAY 10
+Prototype presented to client.
+Feedback gathered and back onto next cycle of software development development life cycle.
+Product backlog
+
+Rest of team - sprint review and sprint retrospective
