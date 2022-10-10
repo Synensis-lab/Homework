@@ -24,13 +24,27 @@ class CashRegister:
         self.discount = 0
 
     def add_item(self):
-        return "Add Item"
+        more_entries = "YES"
+        total_items = {}
+        while more_entries == "YES":
+            print("Enter the item and price")
+            item_name = input("Item name: ")
+            item_price = round(float(input("Item price: £")), 2)
+            total_items[item_name] = item_price
+            print("Would you like to enter another item?")
+            more_entries = input("yes or no?: ").upper()
+        return "Thanks!"
+
+
 
     def remove_item(self):
         pass
 
     def apply_discount(self):
-        pass
+        amount_discount = int(input("How much discount to be applied (percent): "))
+        print(amount_discount)
+
+
 
     def get_total(self):
         pass
@@ -44,7 +58,7 @@ class CashRegister:
 
 # create instance
 Test_1 = CashRegister()
-print(CashRegister.add_item(Test_1))
+print(CashRegister.apply_discount(Test_1))
 # EXAMPLE code run:
 
 # ADD
