@@ -87,12 +87,14 @@ class CashRegister:
                 amount_discount = int(input("How much discount to be applied (percent): "))
             except:
                 print("Value not understood, please re-enter percentage amount")
-                continue
-        print(amount_discount)
-        self.discount = amount_discount
-        percentage = 100 * self.total_price/self.discount
-        print("Discount = £{}".format(percentage))
-        
+                return CashRegister.ask_user(self)
+            print(amount_discount)
+            self.discount = amount_discount
+            percentage = 100 * (self.total_price/self.discount)
+            print(percentage)
+            print("Discount = £{}".format(percentage))
+            return CashRegister.ask_user(self)
+
     def get_total(self):
         total = sum(self.total_items.values())
         print("Total cost: £{}".format(total))
