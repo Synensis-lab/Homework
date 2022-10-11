@@ -17,51 +17,111 @@ For example, method add_item probably accepts some kind of an item?..
 
 class CashRegister:
 
-    def __init__(self):
+    def __init__(self, total_items):
 
-        self.total_items = None # {'item': 'price'}
+        self.total_items = {}
         self.total_price = 0
         self.discount = 0
 
-    def add_item(self):
-        more_entries = "YES"
-        total_items = {}
-        while more_entries == "YES":
-            print("Enter the item and price")
-            item_name = input("Item name: ")
-            item_price = round(float(input("Item price: £")), 2)
-            total_items[item_name] = item_price
-            print("Would you like to enter another item?")
-            more_entries = input("yes or no?: ").upper()
-        return "Thanks!"
+    # This method asks user what part of the register they would like to use.
+    def ask_user(self):
+        while True:
+            try:
+                next_step = input("Cash Register Options = add, remove, show, discount, reset, end:  ").upper()
+            except:
+                print("Entry not recognised, try again")
+                continue
+            if next_step == "ADD" or next_step.startswith("A"):
+                return CashRegister.add_item(self)
+            elif next_step == "REMOVE":
+                return CashRegister.remove_item(self)
+            elif next_step == "SHOW":
+                return CashRegister.show_items(self)
+            elif next_step == "DISCOUNT" or next_step.startswith("D"):
+                return CashRegister.apply_discount(self)
+            elif next_step == "RESET":
+                return CashRegister.reset_register(self)
+            elif next_step == "END":
+                print("Thank you")
+                break
+            else:
+                quit()
 
+
+    def add_item(self):
+        total_items = {}
+        while True:
+            print("Enter the item and price")
+            item_name = input("Item name: ").upper()
+            try:
+                item_price = round(float(input("Item price: £")), 2)
+            except:
+                print("Value not recognised, enter again")
+                continue
+            total_items[item_name] = item_price
+            self.total_items.update(total_items)
+            CashRegister.show_items(self)
+            CashRegister.get_total(self)
+            return CashRegister.ask_user(self)
 
 
     def remove_item(self):
-        pass
+        if self.total_items != None:
+            item = True
+            while True:
+                item = input("State which item you would like to remove: ").upper()
+                if self.total_items.get(item):
+                    self.total_items.pop(item)
+                    print("{} has been removed".format(item))
+                    return CashRegister.ask_user(self)
+                else:
+                    print("input not understood please enter again")
+                continue
+        else:
+            print("There are currently no items in the cash register! use the add option to enter items.")
+            return CashRegister.ask_user(self)
 
     def apply_discount(self):
-        amount_discount = int(input("How much discount to be applied (percent): "))
+        while True:
+            try:
+                amount_discount = int(input("How much discount to be applied (percent): "))
+            except:
+                print("Value not understood, please re-enter percentage amount")
+                continue
         print(amount_discount)
-
-
-
+        self.discount = amount_discount
+        percentage = 100 * self.total_price/self.discount
+        print("Discount = £{}".format(percentage))
+        
     def get_total(self):
-        pass
+        total = sum(self.total_items.values())
+        print("Total cost: £{}".format(total))
+        # return CashRegister.ask_user(self)
 
     def show_items(self):
-        pass
+        if len(self.total_items) > 0:
+            print("Items: ")
+            [print(key, "  ", value) for key, value in self.total_items.items()]
+            return CashRegister.ask_user(self)
+        else:
+            print("There are currently no items in the cash register, use the add option to enter items")
+            return CashRegister.ask_user(self)
+
+        # if (self.total_items) != None:
+        #     print("Your purchases are:")
+        #     for key, value in self.total_items.items():
+        #         return print(key, value)
+        #
 
     def reset_register(self):
         pass
 
 
 # create instance
-Test_1 = CashRegister()
-print(CashRegister.apply_discount(Test_1))
+bill_1 = CashRegister(None)
 # EXAMPLE code run:
+print(CashRegister.ask_user(bill_1))
 
-# ADD
 
 
 """
