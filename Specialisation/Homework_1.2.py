@@ -10,9 +10,8 @@ Create a new subclass from student to represent a concrete student doing a speci
 Software Student and Data Science student.
 
 """
-
 import datetime
-
+from datetime import date, datetime, timedelta
 
 
 class Student:
@@ -30,15 +29,38 @@ class Student:
     def fullname(self):
         return "{} {}".format(self.f_name, self.s_name)
 
-    def find_age(self):
-        # datetime_object = datetime.strptime(self.dob_ddmmyy, %d%d%Y).date()
-        pass
-
     # Display_student method displays all data for student.
     def display_student(self):
         print("Student details:")
         print("Name: {}".format(Student.fullname(self)))
         print("Date of Birth: {}".format(self.dob_ddmmyy))
+
+    def date_today(self):
+        return date.today().strftime("%d%m%y")
+
+    def display_date_today(self):
+        today = self.date_today()
+        print("Date: ", today)
+
+# I cant get this to work! Help would be appreaciated
+    def find_age(self):
+        birth_date = datetime.strptime(self.dob_ddmmyy, "%Y%m%d")
+        format_birth_date = (datetime.strftime(birth_date, "%Y%m%d"))
+        today = date.today()
+        today_formatted = (datetime.strftime(today, "%Y%m%d"))
+        days_in_year = 365.2425
+        print(format_birth_date)
+        print(date.today())
+        age = (today_formatted - format_birth_date) // timedelta(days_in_year)
+        print(age)
+        # print("Age: {} years".format(age))
+
+
+
+
+
+
+
 
 
 # CREATING INSTANCES
@@ -104,41 +126,58 @@ class CFGStudent(Student):
             print("Error! markbook only accepts whole numbers")
             exit()
 
-    def change_markbook(self):
-        pass
+# ARGUMENT INPUT remove key/value from dict.
+    def change_markbook(self, element):
+        if element in self.markbook:
+            self.markbook.pop(element)
+            print("{} deleted".format(element))
+        else:
+            print("Element not recognised")
 
     def display_markbook(self):
+        print("Current Markbook entries")
+        self.display_date_today()
         for key, value in self.markbook.items():
             print(key, " : ", value)
 
 
     def average_mark(self):
-        pass
+        grades = self.markbook.values()
+        number_of_grades = len(grades)
+        total_grades = int(sum(grades))
+        average = int(total_grades / number_of_grades)
+        print("Average grade: {} ".format(average))
+
 
 
 # CREATE INSTANCES:
 # CFG_1 = CFGStudent("Amy", "Fowler", "100373", 1, ["python"])
 CFG_2 = CFGStudent("Fleur", "Gill", "200495", 2, ["SQL"])
 print(CFG_2.cfg_courses)
+print(CFG_2.find_age())
 # TRYING METHODS
 # print(CFG_1.fullname())
 # print(CFGStudent.num_of_students)
 # print(Student.display_student(CFG_1))
 CFG_2.view_subjects()
 
-# CFG_2.add_courses("HTML")
+CFG_2.add_courses("HTML")
+CFG_2.view_subjects()
 # CFG_2.view_subjects()
 # CFG_2.remove_courses("HTML")
 # CFG_2.view_subjects()
 CFG_2.add_markbook("code challenge", 45.67)
 CFG_2.add_markbook("Theory1", 49.455)
 
+# CFG_2.display_markbook()
+# CFG_2.average_mark()
+
+CFG_2.change_markbook("Theory1")
+# CFG_2.change_markbook("Theo1")
 CFG_2.display_markbook()
+
 
 # CHECKING INHERITANCE
 # print(help(CFGStudent))
 
-# class CFGStudent(<should inherit from Student>)
-#     create new methods that manage student's subects (add/remove new subject and its graade to the dict)
-#     create a method to view all subjects taken by a student
-#     create a method  (and a new variable) to get student's overall mark (use average)
+
