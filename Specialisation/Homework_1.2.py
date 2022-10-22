@@ -56,13 +56,6 @@ class Student:
         # print("Age: {} years".format(age))
 
 
-
-
-
-
-
-
-
 # CREATING INSTANCES
 # student_1 = Student("Emma", "Gill", "100373", 1)
 # student_2 = Student("Ian", "Dawson", "130670", 2)
