@@ -52,6 +52,8 @@ def generate_phrase(characters, phrase):
 # print(generate_phrase("cbacba","aabbccc"))
 print(generate_phrase("helodooooddddllll3451234!!!!! ","hello1234!!!! "))
 
+#
+
 
 
 
